@@ -1,12 +1,13 @@
 # xhsRSS Scraper
 
-This repository contains scripts for scraping content from XiaoHongShu (小红书).
+This repository contains scripts for fetching posts from the last 24 hours matching custom keywords on Rednote/XiaoHongShu, delivering a daily digest.
 
 ## Files
 
-- `xhs_scraper.py` - core scraping logic
-- `xhs_scraper_public.py` - public-facing entrypoint
-- `xhs_session.json` - session data
+- `xhs_scraper_public.py` – the public template script with core scraping logic and command‑line options; you can edit the configuration lists at the top to set your keywords, categories, and filters.
+- `xhs_scraper_example.py` – an example showing how you might customize keywords or tweak behavior for a different use case.
+- `xhs_session.json` – stores the browser login/session state after the first login.
+- `xhs_seen.json` – (created during scraping) keeps track of already‑seen post IDs to avoid duplicates; it is not included in the repo.
 
 ## Setup
 
@@ -35,3 +36,13 @@ This repository contains scripts for scraping content from XiaoHongShu (小红�
    The results will be printed to the terminal and also saved to `xhs_digest.txt`.
 
 (You can also run `xhs_scraper_public.py` — it's just a thin command‑line wrapper and uses the same underlying logic as `xhs_scraper.py`.)
+
+### Customizing keywords and filters
+
+If you use `xhs_scraper_public.py` directly, you can edit the top of that file to adjust the following lists to suit your needs:
+
+- `KEYWORDS` – the search terms used for scraping.
+- `NOISE_KEYWORDS` – substrings whose presence in a title will cause the post to be ignored.
+- `BLOGGERS` – an optional list of specific bloggers to track (each entry is a `{"name": ..., "id": ...}` object).
+
+Feel free to modify these arrays and re‑run the script; they are plain Python lists at the top of the file.
