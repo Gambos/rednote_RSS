@@ -1,0 +1,4 @@
+# Add your Python dependencies here
+requests
+playwright
+# The Playwright package will download browser binaries (Chromium, Firefox, WebKit) when installed.
