@@ -47,7 +47,7 @@ Feel free to modify these arrays and re‑run the script; they are plain Python 
    ```
    The results will be printed to the terminal and also saved to `xhs_digest.txt`.
 
-4. **Schedule (daily run)**
+4. **(Optional) Schedule daily run**
    You can run the scraper on a daily schedule with the `--schedule` option:
    ```bash
    python xhs_scraper_public.py --schedule
