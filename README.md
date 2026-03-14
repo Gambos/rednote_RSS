@@ -46,3 +46,12 @@ Feel free to modify these arrays and re‑run the script; they are plain Python 
    python xhs_scraper_public.py
    ```
    The results will be printed to the terminal and also saved to `xhs_digest.txt`.
+
+4. **Schedule (daily run)**
+   You can run the scraper on a daily schedule with the `--schedule` option:
+   ```bash
+   python xhs_scraper_public.py --schedule
+   ```
+   It will run once immediately and then re-run every day at the configured time.
+
+   To change the daily run time, edit the `SCHEDULE_TIME` constant near the top of `xhs_scraper_public.py` (e.g. change the line `SCHEDULE_TIME = "23:00"`).
