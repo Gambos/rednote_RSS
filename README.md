@@ -43,6 +43,6 @@ Feel free to modify these arrays and re‑run the script; they are plain Python 
 
 3. **Scrape**:
    ```bash
-   python xhs_scraper.py
+   python xhs_scraper_public.py
    ```
    The results will be printed to the terminal and also saved to `xhs_digest.txt`.
