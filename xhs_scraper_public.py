@@ -21,49 +21,27 @@ from playwright.async_api import async_playwright
 
 SESSION_FILE  = "xhs_session.json"
 SEEN_FILE     = "xhs_seen.json"
-SCHEDULE_TIME = "08:00"
+SCHEDULE_TIME = "23:00"  # 每天晚上 23:00 运行
 
 KEYWORDS = [
-    # 荷兰求职
-    "荷兰 offer",
-    "荷兰 简历",
-    "荷兰 面试",
-    "荷兰 跳槽",
-    # 数据工程
-    "data engineer",
-    "analytics engineer",
-    "数据工程",
-    "数据仓库",
-    # AI
-    "AI产品",
-    "claude",
-    "vibe coding",
-    # 副业/创业
-    "AI副业",
-    "副业",
-    "辞职创业",
+    # 类别1
+    "关键词1",
+    "关键词2",
+    # 类别2
+    "关键词3",
+    "关键词4"
 ]
 
 # 关键词到分类的映射
 KEYWORD_CATEGORY = {
-    "荷兰 offer": "荷兰求职",
-    "荷兰 简历": "荷兰求职",
-    "荷兰 面试": "荷兰求职",
-    "荷兰 跳槽": "荷兰求职",
-    "data engineer": "数据工程",
-    "analytics engineer": "数据工程",
-    "数据工程": "数据工程",
-    "数据仓库": "数据工程",
-    "AI产品": "AI",
-    "claude": "AI",
-    "vibe coding": "AI",
-    "AI副业": "副业/创业",
-    "副业": "副业/创业",
-    "辞职创业": "副业/创业",
+    "类别1": "关键词1",
+    "类别1": "关键词2",
+    "类别2": "关键词3",
+    "类别2": "关键词4"
 }
 
 # 按点赞数排序的分类（其余用综合排序）
-SORT_BY_LIKES_CATEGORIES = {"AI", "副业/创业"}
+SORT_BY_LIKES_CATEGORIES = {"类别1"}
 
 # 博主主页（只抓最近24小时内的新帖）
 # 格式：{"name": "博主名称", "id": "博主ID"}
@@ -73,7 +51,7 @@ BLOGGERS = [
     # {"name": "博主名", "id": "博主ID"},
 ]
 
-NOISE_KEYWORDS = ["广告", "代购", "链接在主页", "点击购买", "实习", "录取", "入学", "master", "msc", "留学", "phd", "博士", "硕士", "本科", "fall"]
+NOISE_KEYWORDS = ["advertisement", "purchase"]
 
 # ─────────────────────────────────────────────
 # 工具函数
